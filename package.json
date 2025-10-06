@@ -1,8 +1,9 @@
 {
-  "name": "rescript-react-router",
-  "version": "0.1.0",
+  "name": "@illusionalsagacity/rescript-react-router",
+  "version": "0.0.0-alpha.0",
   "packageManager": "yarn@4.5.3",
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@glennsl/rescript-fetch": "0.2.3",
     "@rescript/core": "^1.6.1",
     "@rescript/react": "^0.13.0",
