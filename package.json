@@ -1,26 +1,13 @@
 {
-  "name": "@illusionalsagacity/rescript-react-router",
-  "version": "0.0.0-alpha.0",
+  "name": "rescript-react-router",
+  "private": true,
+  "version": "0.0.0",
   "packageManager": "yarn@4.5.3",
+  "workspaces": [
+    "public",
+    "EXAMPLES"
+  ],
   "devDependencies": {
-    "@changesets/cli": "^2.29.7",
-    "@glennsl/rescript-fetch": "0.2.3",
-    "@rescript/core": "^1.6.1",
-    "@rescript/react": "^0.13.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^6.0.0",
-    "rescript": "^11.1.4",
-    "vite": "^6.2.2"
-  },
-  "peerDependencies": {
-    "react-router-dom": "^6.0.0"
-  },
-  "scripts": {
-    "build": "rescript build",
-    "format": "rescript format -all",
-    "format:ci": "rescript format -all -check",
-    "watch": "rescript build -w",
-    "dev": "vite"
+    "@changesets/cli": "npm:^2.29.7"
   }
 }

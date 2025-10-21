@@ -1,0 +1,29 @@
+{
+  "name": "examples",
+  "uncurried": true,
+  "bsc-flags": ["-open RescriptCore"],
+  "jsx": {
+    "version": 4
+  },
+  "bs-dev-dependencies": [],
+  "pinned-dependencies": ["@illusionalsagacity/rescript-react-router"],
+  "bs-dependencies": [
+    "@illusionalsagacity/graphql-ppx",
+    "@illusionalsagacity/rescript-react-router",
+    "@illusionalsagacity/rescript-msw",
+    "@rescript/core",
+    "@rescript/react",
+    "@glennsl/rescript-fetch"
+  ],
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": {
+    "suffix": ".res.mjs",
+    "module": "esmodule",
+    "in-source": true
+  }
+}

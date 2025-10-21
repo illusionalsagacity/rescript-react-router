@@ -1,0 +1,8 @@
+.changeset
+lib
+.gitattributes
+.yarnrc.yml
+tsconfig.json
+vite.config.mjs
+index.html
+src/*.res.mjs

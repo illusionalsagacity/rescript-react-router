@@ -143,5 +143,6 @@ dist
 .vscode-test
 
 # rescript
-lib/*
+**/lib
 *.res.mjs
+form.md

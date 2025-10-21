@@ -1,0 +1,10 @@
+html {
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
