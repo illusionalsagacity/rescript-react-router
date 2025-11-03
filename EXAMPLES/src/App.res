@@ -18,7 +18,10 @@
 module App = {
   @react.component
   let make = () => {
-    <ReactRouter.RouterProvider router=Routes.browserRouter />
+    <ReactRouter.RouterProvider router={Routes.browserRouter} />
+    // <ReactRouter.BrowserRouter>
+    //   <AppRoutes />
+    // </ReactRouter.BrowserRouter>
   }
 }
 

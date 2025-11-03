@@ -6,4 +6,4 @@ type props = {
 }
 
 @module("react-router-dom")
-external make: React.component<props> => React.element = "BrowserRouter"
+external make: React.component<props> = "BrowserRouter"

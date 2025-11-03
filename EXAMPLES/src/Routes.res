@@ -1,6 +1,6 @@
 let dashboardRoute = {
   ReactRouter.RouteObject.id: "dashboard",
-  path: "dashboard",
+  index: true,
   element: <Dashboard />,
   caseSensitive: true,
 }
@@ -38,7 +38,7 @@ let errorRoute = {
 
 let rootRoute = {
   ReactRouter.RouteObject.id: "root",
-  path: "/",
+  path: "/*",
   caseSensitive: true,
   element: <Layout />,
   errorElement: <ErrorRoute />,

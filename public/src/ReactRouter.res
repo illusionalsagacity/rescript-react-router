@@ -1,6 +1,7 @@
 module Action = ReactRouter__Action
 module Await = ReactRouter__Await
 module BrowserHistory = ReactRouter__BrowserHistory
+module BrowserRouter = ReactRouter__BrowserRouter
 module CreateStaticRouter = ReactRouter__CreateStaticRouter
 module DataStrategy = ReactRouter__DataStrategy
 module Fetcher = ReactRouter__Fetcher
@@ -28,6 +29,7 @@ module RemixRouter = ReactRouter__RemixRouter
 module RouteMatch = ReactRouter__RouteMatch
 module RouteObject = ReactRouter__RouteObject
 module RouterProvider = ReactRouter__RouterProvider
+module Route = ReactRouter__Route
 module Routes = ReactRouter__Routes
 module ScrollRestoration = ReactRouter__ScrollRestoration
 module StaticHandler = ReactRouter__StaticHandler
