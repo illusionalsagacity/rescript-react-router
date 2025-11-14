@@ -1,15 +1,15 @@
 type loaderOptions = {
   params: Dict.t<string>,
-  request: unknown, // TODO
+  request: Fetch.Request.t,
 }
 
 type actionOptions = {
   params: Dict.t<string>,
-  request: unknown, // TODO
+  request: Fetch.Request.t,
 }
 
-type props<'data, 'lazyProps> = {
-  // action?: unknown, // TODO
+type props<'loaderResponse, 'actionResponse, 'lazyProps, 'handle> = {
+  action?: actionOptions => promise<'actionResponse>,
   caseSensitive?: bool,
   children?: React.element,
   element?: React.element,
@@ -17,11 +17,12 @@ type props<'data, 'lazyProps> = {
   @as("lazy") lazy_?: unit => promise<React.component<'lazyProps>>,
   index?: bool,
   path?: string,
-  loader?: loaderOptions => promise<'data>,
+  loader?: loaderOptions => promise<'loaderResponse>,
   shouldRevalidate?: bool,
-  // TODO: hydrateFallbackElement?: React.element,
-  // handle?: unknown, // TODO
+  hydrateFallbackElement?: React.element,
+  handle?: 'handle,
 }
 
 @module("react-router-dom")
-external make: React.component<props<'data, 'lazyProps>> = "Route"
+external make: React.component<props<'loaderResponse, 'actionResponse, 'lazyProps, 'handle>> =
+  "Route"

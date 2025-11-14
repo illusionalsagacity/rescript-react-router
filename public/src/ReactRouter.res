@@ -61,7 +61,7 @@ type memoryRouterOptions<'state> = {
 
 @module("react-router-dom")
 external createMemoryRouter: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   ~options: memoryRouterOptions<'state>=?,
 ) => RemixRouter.t = "createMemoryRouter"
 
@@ -78,7 +78,7 @@ type browserRouterOptions<'hydrationData> = {
 
 @module("react-router-dom")
 external createBrowserRouter: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   ~options: browserRouterOptions<'hydrationData>=?,
 ) => RemixRouter.t = "createBrowserRouter"
 // #endregion
@@ -92,7 +92,7 @@ type hashRouterOptions<'state> = {
 
 @module("react-router-dom")
 external createHashRouter: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   ~options: hashRouterOptions<'state>=?,
 ) => RemixRouter.t = "createHashRouter"
 
@@ -109,7 +109,7 @@ type staticRouterOptions<'state> = {
 
 @module("react-router-dom")
 external createStaticRouter: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   ~context: unknown,
   ~options: staticRouterOptions<'state>,
 ) => RemixRouter.t = "createStaticRouter"
@@ -126,7 +126,7 @@ external parsePath: string => PartialPath.t = "parsePath"
 
 @module("react-router-dom")
 external matchRoutes: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   StringOrLocation.t<'state>,
   ~basename: string=?,
 ) => array<RouteMatch.t<'data>> = "matchRoutes"
@@ -235,16 +235,8 @@ external useNavigationType: unit => Action.t = "useNavigationType"
 @module("react-router-dom")
 external useMatch: @unwrap [#Path(Path.t) | #Pattern(PathPattern.t)] => PathMatch.t = "useMatch"
 
-type match<'data, 'handle> = {
-  id: string,
-  pathname: string,
-  data: 'data,
-  params: Dict.t<string>,
-  handle: 'handle,
-}
-
 @module("react-router-dom")
-external useMatches: unit => array<match<'data, 'handle>> = "useMatches"
+external useMatches: unit => array<UIMatch.t> = "useMatches"
 
 @module("react-router-dom")
 external useNavigate: (unit, To.t, ~options: NavigateOptions.t<'state>=?) => unit = "useNavigate"
@@ -284,7 +276,7 @@ external useViewTransitionState: (To.t, ~options: useViewTransitionStateOptions=
 
 @module("react-router-dom")
 external useRoutes: (
-  array<ReactRouter__RouteObject.t<'a>>,
+  array<ReactRouter__RouteObject.t>,
   ~location: StringOrLocation.t<'state>=?,
 ) => array<RouteMatch.t<'data>> = "useRoutes"
 

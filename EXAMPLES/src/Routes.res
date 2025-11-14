@@ -1,16 +1,22 @@
-let dashboardRoute = {
-  ReactRouter.RouteObject.id: "dashboard",
+let dashboardRoute = ReactRouter.RouteObject.Route({
+  id: "dashboard",
   index: true,
   element: <Dashboard />,
   caseSensitive: true,
-}
+})
 
-let settingsRoute = {
-  ReactRouter.RouteObject.id: "settings",
+let settingsRoute = ReactRouter.RouteObject.Route({
+  id: "settings",
   path: "settings",
   caseSensitive: true,
   element: <Settings />,
   errorElement: <ErrorRoute />,
+  action: async ({request, params}) => {
+    Console.log2(request, params)
+    %debugger
+
+    ()
+  },
   loader: async _args => {
     let response = await Fetch.fetch("/api/settings", {method: #GET})
 
@@ -23,10 +29,10 @@ let settingsRoute = {
     | exception _e => Error.make("Json parsing error")->Error.raise
     }
   },
-}
+})
 
-let errorRoute = {
-  ReactRouter.RouteObject.id: "error",
+let errorRoute = ReactRouter.RouteObject.Route({
+  id: "error",
   path: "error",
   caseSensitive: true,
   element: <article>
@@ -34,16 +40,16 @@ let errorRoute = {
   </article>,
   errorElement: <ErrorRoute />,
   loader: _args => Error.make("rejected")->Error.toException->Promise.reject,
-}
+})
 
-let rootRoute = {
-  ReactRouter.RouteObject.id: "root",
+let rootRoute = ReactRouter.RouteObject.Route({
+  id: "root",
   path: "/*",
   caseSensitive: true,
   element: <Layout />,
   errorElement: <ErrorRoute />,
   children: [dashboardRoute, settingsRoute, errorRoute],
-}
+})
 
 let routes = [rootRoute]
 

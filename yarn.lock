@@ -460,7 +460,6 @@ __metadata:
     react-dom: "npm:^19.0.0"
     react-router-dom: "npm:^6.0.0"
     rescript: "npm:^11.1.4"
-    vite: "npm:^6.2.2"
   peerDependencies:
     react-router-dom: ^6.0.0
   languageName: unknown

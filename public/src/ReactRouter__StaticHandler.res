@@ -7,5 +7,5 @@ type options = {
 }
 
 @module("react-router-dom/server")
-external createStaticHandler: (array<ReactRouter__RouteObject.t<'data>>, ~options: options=?) => t =
+external createStaticHandler: (array<ReactRouter__RouteObject.t>, ~options: options=?) => t =
   "createStaticHandler"
