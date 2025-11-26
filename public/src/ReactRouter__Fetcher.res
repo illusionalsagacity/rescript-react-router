@@ -1,12 +1,36 @@
+/**
+Options for fetcher form submission.
+*/
 type submitOptions
 
+/**
+Fetcher instance for making data mutations without navigation.
+Extends PublicFetcher with form component and methods.
+- `form`: React component for rendering fetcher forms
+- `submit`: Programmatically submit data
+- `load`: Trigger a loader without navigation
+- `data`: Access the fetcher's loaded data
+*/
 type t<'state> = {
   ...ReactRouter__PublicFetcher.t,
   form: React.component<ReactRouter__Form.props<'state>>,
 }
 
-@send external submit: (t<_>, 'data, submitOptions) => unit = "submit"
-@send external load: t<_> => unit = "load"
+/**
+Programmatically submit data through the fetcher.
+*/
+@send
+external submit: (t<_>, 'data, submitOptions) => unit = "submit"
 
-// typed as a separate function so that arrays can have different data types
-@get external data: t<'state> => 'loaderData = "data"
+/**
+Trigger the fetcher's loader without navigation.
+*/
+@send
+external load: t<_> => unit = "load"
+
+/**
+Access the data returned by the fetcher's loader.
+Note: Return type is not type-safe - cast to your expected type.
+*/
+@get
+external data: t<'state> => 'loaderData = "data"

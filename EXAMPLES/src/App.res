@@ -1,24 +1,22 @@
-// let settingsLoader: 'data. unit => Promise.t<'data> = async (type data) => {
-//   let response = await Fetch.fetch("/api/settings", {method: #GET})
-//   let json = Fetch.Response.json(response)
+/**
+Example application entry point demonstrating React Router setup.
 
-//   json
-// }
+This example uses the data router approach (recommended):
+1. Define routes with RouteObject in Routes.res
+2. Create a browser router with createBrowserRouter
+3. Render RouterProvider with the router instance
 
-// let data = ReactRouter.useRouteLoaderData(settingsRoute)
-
-// let loader: 'data. unit => Promise.t<'data> = () => Promise.resolve("hello")
-
-// let _memoryRouter = ReactRouter.createMemoryRouter(
-//   routes,
-//   ~options={initialEntries: [String("/dashboard")]},
-// )
-// let _hashRouter = ReactRouter.createHashRouter(routes)
-
+Alternative approach (component-based, commented out):
+Use BrowserRouter with Routes/Route components for simpler apps
+without data loading requirements.
+*/
 module App = {
   @react.component
   let make = () => {
+    // Use RouterProvider with the browser router from Routes.res
     <ReactRouter.RouterProvider router={Routes.browserRouter} />
+
+    // Alternative: Component-based routing (simpler but no data loading)
     // <ReactRouter.BrowserRouter>
     //   <AppRoutes />
     // </ReactRouter.BrowserRouter>
@@ -28,6 +26,7 @@ module App = {
 @send
 external getElementById: (Dom.document, string) => option<Dom.element> = "getElementById"
 
+// Wait for MSW (Mock Service Worker) to be ready before rendering
 await SetupMSW.promise
 
 getElementById(document, "root")

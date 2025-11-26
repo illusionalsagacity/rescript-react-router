@@ -9,6 +9,7 @@
     "@illusionalsagacity/rescript-react-router": "workspace:*",
     "@rescript/core": "^1.6.1",
     "@rescript/react": "^0.14.0",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "msw": "^2.11.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

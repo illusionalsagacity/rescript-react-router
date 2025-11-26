@@ -1,3 +1,15 @@
+/**
+Props for the Link component.
+
+Key props:
+- `to`: Destination path (required) - can be a string or path object
+- `replace`: Replace current history entry instead of pushing
+- `state`: State object passed to the destination location
+- `reloadDocument`: Skip client-side routing and do a full page reload
+- `preventScrollReset`: Don't reset scroll position after navigation
+- `relative`: How to resolve relative paths ("route" or "path")
+- `viewTransition`: Enable view transitions API for this navigation
+*/
 type props<'state> = {
   children?: React.element,
   reloadDocument?: bool,
@@ -25,5 +37,9 @@ type props<'state> = {
   rel?: string,
 }
 
+/**
+Navigation link component that renders an anchor element.
+Handles client-side navigation without full page reloads.
+*/
 @module("react-router-dom")
 external make: React.component<props<'state>> = "Link"

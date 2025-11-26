@@ -1,5 +1,6 @@
 {
   "name": "@illusionalsagacity/rescript-react-router",
+  "uncurried": true,
   "bsc-flags": ["-open RescriptCore"],
   "jsx": {
     "version": 4

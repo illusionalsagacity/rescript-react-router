@@ -1,3 +1,10 @@
+/**
+Dashboard component - the default route (index route).
+
+Demonstrates:
+- Using Link component for navigation
+- The String variant of the To type for simple paths
+*/
 @react.component
 let make = () => {
   <article>
